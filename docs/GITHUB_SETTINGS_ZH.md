@@ -14,7 +14,7 @@
 ## Social Preview
 
 - 推荐上传：
-  [assets/social-preview.svg](../assets/social-preview.svg)
+  [assets/social-preview.png](../assets/social-preview.png)
 - 上传前确认：
   - 没有真实密钥
   - 没有本机路径

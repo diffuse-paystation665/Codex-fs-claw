@@ -289,7 +289,7 @@ npm run bridge:restart
 - Topics:
   `codex`, `feishu`, `lark`, `agent`, `local-first`, `approval-workflow`, `cron`, `automation`, `skills`, `typescript`
 - Social Preview:
-  use [assets/social-preview.svg](./assets/social-preview.svg)
+  use [assets/social-preview.png](./assets/social-preview.png)
 
 ## 适合谁
 

@@ -17,7 +17,7 @@
 - Topics:
   `codex`, `feishu`, `lark`, `agent`, `local-first`, `approval-workflow`, `cron`, `automation`, `skills`, `typescript`
 - Social Preview:
-  upload [assets/social-preview.svg](../assets/social-preview.svg)
+  upload [assets/social-preview.png](../assets/social-preview.png)
 
 ## 中文标题备选
 
