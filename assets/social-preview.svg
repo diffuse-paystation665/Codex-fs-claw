@@ -1,0 +1,50 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="640" fill="#F4EBDC"/>
+  <rect x="34" y="34" width="1212" height="572" rx="28" fill="#FFFDF7" stroke="#1F1F1F" stroke-width="4"/>
+  <rect x="76" y="76" width="300" height="14" rx="7" fill="#D74F35"/>
+  <rect x="76" y="102" width="180" height="14" rx="7" fill="#1F1F1F"/>
+  <circle cx="1120" cy="106" r="30" fill="#D74F35"/>
+  <circle cx="1060" cy="106" r="30" fill="#0B7A75"/>
+  <circle cx="1000" cy="106" r="30" fill="#E0B04B"/>
+  <text x="76" y="210" fill="#1F1F1F" font-family="'Segoe UI', Arial, sans-serif" font-size="68" font-weight="800">
+    Codex Claw
+  </text>
+  <text x="76" y="284" fill="#1F1F1F" font-family="'Segoe UI', Arial, sans-serif" font-size="44" font-weight="700">
+    Put official Codex into Feishu private chat
+  </text>
+  <text x="76" y="340" fill="#4E4A43" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="500">
+    Safe defaults. Approval-gated local control. Cron and skills included.
+  </text>
+  <rect x="76" y="388" width="260" height="58" rx="16" fill="#1F1F1F"/>
+  <text x="102" y="425" fill="#FFFDF7" font-family="'Consolas', 'Courier New', monospace" font-size="23" font-weight="700">
+    No public callback
+  </text>
+  <rect x="354" y="388" width="228" height="58" rx="16" fill="#0B7A75"/>
+  <text x="383" y="425" fill="#FFFDF7" font-family="'Consolas', 'Courier New', monospace" font-size="23" font-weight="700">
+    Official Codex
+  </text>
+  <rect x="600" y="388" width="270" height="58" rx="16" fill="#D74F35"/>
+  <text x="628" y="425" fill="#FFFDF7" font-family="'Consolas', 'Courier New', monospace" font-size="23" font-weight="700">
+    Approval-gated
+  </text>
+  <rect x="76" y="486" width="510" height="52" rx="16" fill="#EEE2CD"/>
+  <text x="104" y="520" fill="#1F1F1F" font-family="'Consolas', 'Courier New', monospace" font-size="24" font-weight="700">
+    Feishu chat in, Codex works on your machine
+  </text>
+  <rect x="808" y="176" width="372" height="306" rx="28" fill="#1F1F1F"/>
+  <rect x="838" y="214" width="286" height="56" rx="14" fill="#FFFDF7"/>
+  <text x="862" y="249" fill="#1F1F1F" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700">
+    create demo.txt with hello
+  </text>
+  <rect x="900" y="302" width="224" height="104" rx="20" fill="#0B7A75"/>
+  <text x="926" y="340" fill="#FFFDF7" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700">
+    Approval ID
+  </text>
+  <text x="926" y="376" fill="#FFFDF7" font-family="'Consolas', 'Courier New', monospace" font-size="28" font-weight="700">
+    a1b2c3d4
+  </text>
+  <rect x="838" y="432" width="214" height="38" rx="10" fill="#D74F35"/>
+  <text x="858" y="458" fill="#FFFDF7" font-family="'Consolas', 'Courier New', monospace" font-size="20" font-weight="700">
+    /approve a1b2c3d4
+  </text>
+</svg>

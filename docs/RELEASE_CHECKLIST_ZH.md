@@ -35,6 +35,7 @@
 - [ ] README 在 GitHub 页面显示正常，没有乱码
 - [ ] 中文安装教程能按步骤跑通
 - [ ] 发布文案和仓库描述都已准备好
+- [ ] GitHub About 的 Description / Topics / Social Preview 已补好
 - [ ] 演示截图或 GIF 已去隐私
 
 ## 6. 一键发布前最后一步

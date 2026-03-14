@@ -3,6 +3,8 @@
 # Codex Claw
 
 > Put official Codex into Feishu private chat, with approval-gated local control.
+>
+> 把官方 Codex 接进飞书私聊，默认只开放工作区，高风险操作先审批。
 
 ![Node 24+](https://img.shields.io/badge/node-24%2B-1F1F1F?style=flat-square&logo=node.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-0B7A75?style=flat-square&logo=typescript&logoColor=white)
@@ -12,6 +14,8 @@
 一个运行在本机的飞书私聊机器人，底层直接调用官方 Codex。
 
 它不是再造一个 agent loop，而是把你已经能在桌面版 Codex 里做的事，接进飞书私聊，并补上审批、安全默认和持久化会话。
+
+如果这个项目对你有帮助，欢迎点一个 Star。这会很直接地帮助它被更多人看到。
 
 ## 为什么这个项目值得点开
 
@@ -49,6 +53,12 @@
 这就是 Codex Claw 的核心体验：
 
 `飞书聊天入口 + 官方 Codex + 本机能力 + 人工审批`
+
+## 为什么现在值得安装
+
+- 上手路径很短，飞书长连接模式不需要公网回调。
+- 默认先按安全工作区模式运行，不把整机控制当出厂默认。
+- 真正有用的不只是聊天，还包括审批执行、定时任务和 skills 管理。
 
 ## 安全默认
 
@@ -268,6 +278,18 @@ npm run bridge:restart
 - [docs/SETUP_ZH.md](./docs/SETUP_ZH.md)
 - [docs/LAUNCH_COPY_ZH.md](./docs/LAUNCH_COPY_ZH.md)
 - [docs/RELEASE_CHECKLIST_ZH.md](./docs/RELEASE_CHECKLIST_ZH.md)
+- [docs/GITHUB_SETTINGS_ZH.md](./docs/GITHUB_SETTINGS_ZH.md)
+
+## GitHub About 建议
+
+- Description:
+  `Put official Codex into Feishu private chat with approval-gated local control.`
+- Website:
+  `https://github.com/R2Phil-hub/Codex-fs-claw`
+- Topics:
+  `codex`, `feishu`, `lark`, `agent`, `local-first`, `approval-workflow`, `cron`, `automation`, `skills`, `typescript`
+- Social Preview:
+  use [assets/social-preview.svg](./assets/social-preview.svg)
 
 ## 适合谁
 
@@ -286,6 +308,20 @@ npm run bridge:restart
 - 发布前先轮换飞书 `App Secret`。
 - 不要把 `.env`、`data/`、`logs/`、`dist/` 提交到 GitHub。
 - 录屏和截图前，确认没有本机路径、密钥、日志片段和个人账号信息。
+
+## FAQ
+
+### 它会偷偷上传我的整台电脑吗
+
+不会。它会把飞书消息交给飞书，把 Codex 请求交给官方 Codex / OpenAI。项目本身不额外上报第三方，而且公开默认配置只开放工作区，不默认开启整机控制。
+
+### 它能不能像桌面版 Codex 一样控制本机
+
+能，但这属于高级模式。你需要显式把 `CODEX_CONTROL_SCOPE` 切到 `computer`，并且高风险操作仍然会先经过审批。
+
+### 我必须用命令才能创建定时任务和安装 skill 吗
+
+不用。它现在已经支持自然语言，比如“每天早上 9 点帮我总结当前工作目录变化”或“给我装一个 playwright skill”。
 
 ## Roadmap
 

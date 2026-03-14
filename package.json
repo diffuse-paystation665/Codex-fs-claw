@@ -1,16 +1,27 @@
 {
-  "name": "feishu-codex-bridge",
+  "name": "codex-claw",
   "version": "0.1.0",
-  "private": true,
-  "description": "Use Feishu to control official Codex with safe defaults and approval-gated local execution.",
+  "private": false,
+  "description": "Put official Codex into Feishu private chat with safe defaults, approval-gated local control, cron jobs, and skill management.",
   "license": "MIT",
+  "homepage": "https://github.com/R2Phil-hub/Codex-fs-claw",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R2Phil-hub/Codex-fs-claw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/R2Phil-hub/Codex-fs-claw/issues"
+  },
   "keywords": [
     "codex",
     "feishu",
     "lark",
     "assistant",
     "approval",
-    "local-first"
+    "local-first",
+    "cron",
+    "skills",
+    "automation"
   ],
   "type": "module",
   "engines": {

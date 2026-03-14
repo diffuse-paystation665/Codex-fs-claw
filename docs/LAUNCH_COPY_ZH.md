@@ -8,17 +8,44 @@
 
 > Put official Codex into Feishu private chat, with approval-gated local control.
 
+## GitHub About 建议
+
+- Description:
+  `Put official Codex into Feishu private chat with approval-gated local control.`
+- Website:
+  `https://github.com/R2Phil-hub/Codex-fs-claw`
+- Topics:
+  `codex`, `feishu`, `lark`, `agent`, `local-first`, `approval-workflow`, `cron`, `automation`, `skills`, `typescript`
+- Social Preview:
+  upload [assets/social-preview.svg](../assets/social-preview.svg)
+
 ## 中文标题备选
 
 - 把官方 Codex 接进飞书，而且默认更安全
 - 我做了一个能在飞书里直接控制 Codex 的本地助手
 - 不用公网回调，把 Codex 装进飞书私聊
 - 一个带审批流的飞书版 Codex 本机操作器
+- 把官方 Codex 变成飞书里的本机操作器
 
 ## 一句话短介绍
 
 Codex Claw 是一个运行在本机的飞书私聊助手，底层直接调用官方 Codex。  
 默认只开放工作区，高风险操作先审批，再执行。
+
+## 首发推荐文案
+
+如果你只发一条，最推荐用这段：
+
+最近做了个本地优先的小项目：`Codex Claw`
+
+它把官方 Codex 接进飞书私聊，而且不是“只能聊天”的那种机器人。
+
+- 默认只开放工作区
+- 写文件、执行命令、装 skill 会先审批
+- 不用公网回调，不用 `ngrok`
+- 还支持自然语言定时任务
+
+如果你想做的是“边界清楚、能真正在本机做事”的 AI 操作器，这个项目应该会有点意思。
 
 ## 标准中文版介绍
 
@@ -106,3 +133,9 @@ Approval-gated local execution when you need it.
 - 飞书私聊直接可用
 - 高风险操作先审批
 - 不用公网回调
+
+## 首发 Release 标题建议
+
+- `v0.1.0: Codex Claw initial release`
+- `First public release: Codex Claw`
+- `Codex Claw 0.1.0 - Feishu private chat + official Codex`
